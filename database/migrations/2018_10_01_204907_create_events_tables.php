@@ -39,7 +39,7 @@ class CreateEventsTables extends Migration
             $table->unsignedInteger("status");
             $table->timestamp("begin_time");
             $table->timestamp("end_time")->nullable();
-            $table->timestamp("updated_at")->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));;
+            $table->timestamp("updated_at")->useCurrent();
             $table->timestamp("created_at")->useCurrent();
 
             $table->foreign("author_id")->references("id")->on("users");

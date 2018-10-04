@@ -27,8 +27,7 @@ class EventsTableSeeder extends Seeder
                 'status' => $faker->numberBetween(1, 2),
                 'type' => $faker->numberBetween(1, 5),
                 'begin_time' => $faker->dateTime,
-                'end_time' => $faker->dateTime,
-                'update_at' => $faker->dateTime
+                'end_time' => $faker->dateTime
             ]);
         }
     }

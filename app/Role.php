@@ -22,7 +22,7 @@ class Role extends Model
      * Moderator role
      * @var string
      */
-    const ROLE_MODERATOR = "moderator";
+    const ROLE_MODERATOR = "moder";
 
     /**
      * User role

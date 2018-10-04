@@ -14,3 +14,10 @@ Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
 Route::post('details', 'API\UserController@details');
 });
+
+
+Route::get('events', 'API\EventController@index');
+Route::get('events/{event}', 'API\EventController@show');
+Route::post('events', 'API\EventController@store');
+Route::put('events/{event}', 'API\EventController@update');
+Route::delete('events/{event}', 'API\EventController@delete');

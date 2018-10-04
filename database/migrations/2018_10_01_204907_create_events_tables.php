@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -15,30 +16,30 @@ class CreateEventsTables extends Migration
     {
         Schema::create("event_statuses", function (Blueprint $table) {
             $table->increments("id");
-            $table->string("status", 10)->nullable(false);
+            $table->string("status", 10);
         });
 
         Schema::create("event_types", function (Blueprint $table) {
             $table->increments("id");
-            $table->string("type", 10)->nullable(false);
-            $table->string("name", 10)->nullable(false);
+            $table->string("type", 10);
+            $table->string("name", 10);
         });
 
         Schema::create("events", function (Blueprint $table) {
             $table->increments("id");
-            $table->string("name", 50)->nullable(false);
+            $table->string("name", 50);
             $table->text("description");
-            $table->string("country", 20)->nullable(false);
-            $table->string("city", 20)->nullable(false);
-            $table->string("address", 100)->nullable(false);
-            $table->float("lat")->nullable(false);
-            $table->float("lon")->nullable(false);
-            $table->unsignedInteger("type")->nullable(false);
-            $table->unsignedInteger("author_id")->nullable(false);
-            $table->unsignedInteger("status")->nullable(false);
-            $table->timestamp("begin_time")->nullable(false);
-            $table->timestamp("end_time");
-            $table->timestamp("update_at");
+            $table->string("country", 20);
+            $table->string("city", 50);
+            $table->string("address", 100);
+            $table->float("lat");
+            $table->float("lon");
+            $table->unsignedInteger("type");
+            $table->unsignedInteger("author_id");
+            $table->unsignedInteger("status");
+            $table->timestamp("begin_time");
+            $table->timestamp("end_time")->nullable();
+            $table->timestamp("updated_at")->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));;
             $table->timestamp("created_at")->useCurrent();
 
             $table->foreign("author_id")->references("id")->on("users");

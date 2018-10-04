@@ -11,6 +11,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class EventStatus extends Model
 {
+    /** Event statuses  */
+    const statusPrivate = 'private';
+    const statusPublic = 'public';
+
     /**
      * @var array
      */

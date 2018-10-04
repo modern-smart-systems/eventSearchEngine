@@ -18,6 +18,11 @@ class EventType extends Model
     protected $fillable = ['type', 'name'];
 
     /**
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function events()

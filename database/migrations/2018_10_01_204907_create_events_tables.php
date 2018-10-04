@@ -29,7 +29,7 @@ class CreateEventsTables extends Migration
             $table->increments("id");
             $table->string("name", 50);
             $table->text("description");
-            $table->string("country", 20);
+            $table->string("country", 50);
             $table->string("city", 50);
             $table->string("address", 100);
             $table->float("lat");

@@ -16,8 +16,8 @@ class EventTypesTableSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             EventType::create([
-                'type' => $faker->shuffleString(5),
-                'name' => $faker->title,
+                'type' => str_random(10),
+                'name' => str_random(10),
             ]);
         }
     }

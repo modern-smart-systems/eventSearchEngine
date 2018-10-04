@@ -13,6 +13,24 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     /**
+     * Administrator role
+     * @var string
+     */
+    const ROLE_ADMIN = "admin";
+
+    /**
+     * Moderator role
+     * @var string
+     */
+    const ROLE_MODERATOR = "moderator";
+
+    /**
+     * User role
+     * @var string
+     */
+    const ROLE_USER = "user";
+
+    /**
      * @var array
      */
     protected $fillable = ['code', 'name', 'role_id'];

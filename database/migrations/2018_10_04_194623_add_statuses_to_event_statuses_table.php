@@ -15,7 +15,7 @@ class AddStatusesToEventStatusesTable extends Migration
      */
     public function up()
     {
-        $statuses = [['status' => EventStatus::statusPublic], ['status' => EventStatus::statusPrivate]];
+        $statuses = [['status' => 'public'], ['status' => 'private']];
         DB::table('event_statuses')->insert($statuses);
     }
 
@@ -26,7 +26,7 @@ class AddStatusesToEventStatusesTable extends Migration
      */
     public function down()
     {
-        DB::table('event_statuses')->where('status', EventStatus::statusPublic)->delete();;
-        DB::table('event_statuses')->where('status', EventStatus::statusPrivate)->delete();;
+        DB::table('event_statuses')->where('status', 'public')->delete();;
+        DB::table('event_statuses')->where('status', 'private')->delete();;
     }
 }

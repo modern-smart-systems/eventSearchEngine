@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Event\Filters;
+
+trait Filterable
+{
+    /**
+     * Scope a query to apply given filter.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param Filter $filter
+     * @return \Illuminate\Database\Eloquent\Builder
+     * @throws \ReflectionException
+     */
+    public function scopeFilter($query, Filter $filter)
+    {
+        return $filter->apply($query);
+    }
+}

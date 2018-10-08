@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Event\Filters\Filterable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -28,6 +29,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Event extends Model
 {
+    use Filterable;
+
     /**
      * @var array
      */

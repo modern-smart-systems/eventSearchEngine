@@ -23,20 +23,20 @@ class CreateRolesTable extends Migration
 
         $roles = [
             [
-                "code" => Role::ROLE_ADMIN,
-                "name" => "Administrator"
+                'code' => 'admin',
+                'name' => 'Administrator'
             ],
             [
-                "code" => Role::ROLE_MODERATOR,
-                "name" => "Moderator"
+                'code' => 'mod',
+                'name' => 'Moderator'
             ],
             [
-                "code" => Role::ROLE_USER,
-                "name" => "User"
+                'code' => 'user',
+                'name' => 'User'
             ],
         ];
 
-        DB::table("roles")->insert($roles);
+        DB::table('roles')->insert($roles);
     }
 
     /**

@@ -12,7 +12,7 @@
 
 Route::group(['namespace' => 'Api'], function () {
     Route::post('users/login', 'AuthController@login');
-    Route::post('user', 'AuthController@register');
+    Route::post('users/register', 'AuthController@register');
 
     Route::get('events', 'EventController@index');
     Route::get('events/{event}', 'EventController@show');

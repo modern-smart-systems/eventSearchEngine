@@ -1,59 +1,50 @@
 <?php
-namespace App\Http\Controllers\Api;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\User;
-use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+namespace App\Http\Controllers\Api;
+
+use App\Http\Requests\Api\UpdateUser;
+use App\Event\Transformers\UserTransformer;
+
+class UserController extends ApiController
 {
-    public $successStatus = 200;
     /**
-     * login api
+     * UserController constructor.
      *
-     * @return \Illuminate\Http\Response
+     * @param UserTransformer $transformer
      */
-    public function login(){
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
-            $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp')-> accessToken;
-            return response()->json(['success' => $success], $this-> successStatus);
-        }
-        else{
-            return response()->json(['error'=>'Unauthorised'], 401);
-        }
-    }
-    /**
-     * Register api
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function register(Request $request)
+    public function __construct(UserTransformer $transformer)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
-            'c_password' => 'required|same:password',
-        ]);
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
-        $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
-        $user = User::create($input);
-        $success['token'] =  $user->createToken('MyApp')-> accessToken;
-        $success['name'] =  $user->name;
-        return response()->json(['success'=>$success], $this-> successStatus);
+        $this->transformer = $transformer;
+
+        $this->middleware('auth.api');
     }
+
     /**
-     * details api
+     * Get the authenticated user.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
-    public function details()
+    public function index()
     {
-        $user = Auth::user();
-        return response()->json(['success' => $user], $this-> successStatus);
+        return $this->respondWithTransformer(auth()->user());
+    }
+
+    /**
+     * Update the authenticated user and return the user if successful.
+     *
+     * @param UpdateUser $request
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
+     */
+    public function update(UpdateUser $request)
+    {
+        $user = auth()->user();
+
+        if ($request->has('user')) {
+            $user->update($request->get('user'));
+        }
+
+        return $this->respondWithTransformer($user);
     }
 }

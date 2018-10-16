@@ -10,10 +10,11 @@
 |
 */
 
-Route::group(['namespace' => 'Api'], function () {
-    Route::post('users/login', 'AuthController@login');
-    Route::post('users/register', 'AuthController@register');
+Route::group(['namespace' => 'Api', 'middleware' => 'api'], function () {
+    Route::post('auth/login', 'AuthController@login');
+    Route::post('auth/register', 'AuthController@register');
 
     Route::get('events', 'EventController@index');
     Route::get('events/{event}', 'EventController@show');
 });
+

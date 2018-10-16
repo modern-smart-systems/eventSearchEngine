@@ -2,6 +2,7 @@
 
 namespace App;
 
+use JWTAuth;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -47,5 +48,15 @@ class User extends Authenticatable
     public function getTokenAttribute()
     {
         return JWTAuth::fromUser($this);
+    }
+
+    /**
+     * Get the key name for route model binding.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return '\name';
     }
 }

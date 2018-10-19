@@ -13,8 +13,10 @@
 Route::group(['namespace' => 'Api', 'middleware' => 'api'], function () {
     Route::post('auth/login', 'AuthController@login');
     Route::post('auth/register', 'AuthController@register');
+    Route::post('forgot/password', 'ForgotPasswordController@reset');
 
     Route::get('events', 'EventController@index');
     Route::get('events/{event}', 'EventController@show');
 });
+
 

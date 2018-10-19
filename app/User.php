@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Auth\Passwords\CanResetPassword;
 use JWTAuth;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;

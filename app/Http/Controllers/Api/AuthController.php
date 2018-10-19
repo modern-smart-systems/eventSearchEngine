@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\Api\ForgotPasswordUser;
+use App\Http\Requests\Api\ResetPasswordUser;
 use Auth;
 use App\User;
 use App\Http\Requests\Api\LoginUser;

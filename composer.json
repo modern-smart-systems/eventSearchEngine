@@ -34,13 +34,15 @@
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^2.0",
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^7.0",
+        "marat555/eventbrite-api-laravel-wrapper": "*"
     },
     "autoload": {
         "classmap": [
             "database/seeds",
             "database/factories",
-            "app/library"
+            "app/library",
+            "vendor/marat555/eventbrite-api-laravel-wrapper/src"
         ],
         "psr-4": {
             "App\\": "app/"

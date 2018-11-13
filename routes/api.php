@@ -16,6 +16,7 @@ Route::group(['namespace' => 'Api', 'middleware' => 'api'], function () {
     Route::post('forgot/password', 'ForgotPasswordController@reset');
 
     Route::get('events', 'EventController@index');
+    Route::get('events/test', 'EventController@test');
     Route::get('events/{event}', 'EventController@show');
 });
 

@@ -154,7 +154,6 @@ return [
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
 
-
         /*
          * Application Service Providers...
          */
@@ -163,6 +162,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Matat555\Eventbrite\EventbriteServiceProvider::class
     ),
 
     /*
@@ -212,7 +212,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-        'Eventbrite' => Marat555\Eventbrite\Facades\Eventbrite::class,
+        'Eventbrite' => Marat555\Eventbrite\Facades\Eventbrite::class
     ],
 
 ];

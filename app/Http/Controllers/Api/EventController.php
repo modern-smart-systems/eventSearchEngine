@@ -6,6 +6,7 @@ use App\Event;
 use App\Event\Filters\EventFilter;
 use App\Event\Paginate\Paginate;
 use App\Event\Transformers\EventTransformer;
+use Matat555\Eventbrite\Eventbrite;
 
 class EventController extends ApiController
 {
@@ -43,5 +44,14 @@ class EventController extends ApiController
     public function show(Event $event)
     {
         return $this->respondWithTransformer($event);
+    }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
+     */
+    public function test()
+    {
+        return response()->json(Eventbrite::categoty()->all());
     }
 }

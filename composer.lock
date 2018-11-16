@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b89a17531241c0585104af57dfb6d64",
+    "content-hash": "72d760c47bc1fc0a03ae45c8174132a6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1326,16 +1326,16 @@
         },
         {
             "name": "league/oauth2-server",
-            "version": "7.2.0",
+            "version": "7.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-server.git",
-                "reference": "8184f771d43ea7305ddbb893d0daf6f0352ec5fd"
+                "reference": "f2cd3646ffe92a5ce83942cb487702e34b0cf504"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/8184f771d43ea7305ddbb893d0daf6f0352ec5fd",
-                "reference": "8184f771d43ea7305ddbb893d0daf6f0352ec5fd",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/f2cd3646ffe92a5ce83942cb487702e34b0cf504",
+                "reference": "f2cd3646ffe92a5ce83942cb487702e34b0cf504",
                 "shasum": ""
             },
             "require": {
@@ -1355,6 +1355,7 @@
                 "phpstan/phpstan-phpunit": "^0.9.4",
                 "phpstan/phpstan-strict-rules": "^0.9.0",
                 "phpunit/phpunit": "^6.3 || ^7.0",
+                "roave/security-advisories": "dev-master",
                 "zendframework/zend-diactoros": "^1.3.2"
             },
             "type": "library",
@@ -1372,6 +1373,12 @@
                     "name": "Alex Bilbie",
                     "email": "hello@alexbilbie.com",
                     "homepage": "http://www.alexbilbie.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Andy Millington",
+                    "email": "andrew@noexceptions.io",
+                    "homepage": "https://www.noexceptions.io",
                     "role": "Developer"
                 }
             ],
@@ -1392,18 +1399,68 @@
                 "secure",
                 "server"
             ],
-            "time": "2018-06-23T16:57:59+00:00"
+            "time": "2018-11-15T22:37:18+00:00"
         },
         {
-            "name": "marat555/eventbrite-api-laravel-wrapper",
-            "version": "master",
+            "name": "marat555/eventbrite",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Marat555/eventbrite-api-laravel-wrapper.git",
-                "reference": "master"
+                "reference": "05b3cf268ca1b505d668983ddac45a106f5e47a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Marat555/eventbrite-api-laravel-wrapper/zipball/05b3cf268ca1b505d668983ddac45a106f5e47a8",
+                "reference": "05b3cf268ca1b505d668983ddac45a106f5e47a8",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0",
+                "illuminate/support": "^5.1",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1",
+                "scrutinizer/ocular": "^1.1",
+                "squizlabs/php_codesniffer": "^2.3"
             },
             "type": "library",
-            "time": "2018-11-09T19:57:29+00:00"
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Marat555\\Eventbrite\\EventbriteServiceProvider"
+                    ],
+                    "aliases": {
+                        "Eventbrite": "Marat555\\Eventbrite\\Facades\\Eventbrite"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Marat555\\Eventbrite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marat Badykov",
+                    "email": "marat.badykov.555@gmail.com"
+                }
+            ],
+            "description": "Laravel PHP Facade/Wrapper for the Eventbrite Data API v3",
+            "homepage": "https://github.com/Marat555/eventbrite-api-laravel-wrapper",
+            "keywords": [
+                "api",
+                "event",
+                "eventbrite",
+                "laravel",
+                "marat555"
+            ],
+            "time": "2018-11-14T19:33:48+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1548,16 +1605,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.34.4",
+            "version": "1.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "b9a444d829c9a16735aceca1b173e765745bcc0c"
+                "reference": "5c05a2be472b22f63291d192410df9f0e0de3b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b9a444d829c9a16735aceca1b173e765745bcc0c",
-                "reference": "b9a444d829c9a16735aceca1b173e765745bcc0c",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5c05a2be472b22f63291d192410df9f0e0de3b19",
+                "reference": "5c05a2be472b22f63291d192410df9f0e0de3b19",
                 "shasum": ""
             },
             "require": {
@@ -1602,7 +1659,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-11-13T08:26:10+00:00"
+            "time": "2018-11-14T21:55:58+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4550,16 +4607,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.4.3",
+            "version": "7.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c151651fb6ed264038d486ea262e243af72e5e64"
+                "reference": "b1be2c8530c4c29c3519a052c9fb6cee55053bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c151651fb6ed264038d486ea262e243af72e5e64",
-                "reference": "c151651fb6ed264038d486ea262e243af72e5e64",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b1be2c8530c4c29c3519a052c9fb6cee55053bbd",
+                "reference": "b1be2c8530c4c29c3519a052c9fb6cee55053bbd",
                 "shasum": ""
             },
             "require": {
@@ -4630,7 +4687,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-10-23T05:57:41+00:00"
+            "time": "2018-11-14T16:52:02+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -5288,7 +5345,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "marat555/eventbrite": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -6,7 +6,7 @@ use App\Event;
 use App\Event\Filters\EventFilter;
 use App\Event\Paginate\Paginate;
 use App\Event\Transformers\EventTransformer;
-use Matat555\Eventbrite\Eventbrite;
+use Eventbrite;
 
 class EventController extends ApiController
 {
@@ -52,6 +52,6 @@ class EventController extends ApiController
      */
     public function test()
     {
-        return response()->json(Eventbrite::categoty()->all());
+        return response()->json(Eventbrite::category()->all());
     }
 }

@@ -67,5 +67,5 @@ abstract class Transformer
      * @param $data
      * @return mixed
      */
-    public abstract function transform($data);
+    abstract public function transform($data);
 }

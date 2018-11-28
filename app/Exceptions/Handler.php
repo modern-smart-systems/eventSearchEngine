@@ -75,7 +75,6 @@ class Handler extends ExceptionHandler
          * Handle validation errors thrown using ValidationException.
          */
         if ($exception instanceof ValidationException) {
-
             $validationErrors = $exception->validator->errors()->getMessages();
 
             /*
@@ -90,8 +89,8 @@ class Handler extends ExceptionHandler
              * ]
              */
 
-            $validationErrors = array_map(function($error) {
-                return array_map(function($message) {
+            $validationErrors = array_map(function ($error) {
+                return array_map(function ($message) {
                     return remove_words($message, 2);
                 }, $error);
             }, $validationErrors);

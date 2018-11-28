@@ -26,7 +26,7 @@ class AddStatusesToEventStatusesTable extends Migration
      */
     public function down()
     {
-        DB::table('event_statuses')->where('status', 'public')->delete();;
-        DB::table('event_statuses')->where('status', 'private')->delete();;
+        DB::table('event_statuses')->where('status', 'public')->delete();
+        DB::table('event_statuses')->where('status', 'private')->delete();
     }
 }

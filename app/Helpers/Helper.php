@@ -11,7 +11,7 @@ if (! function_exists('remove_words')) {
     function remove_words($text, $count = 1)
     {
         if (str_word_count($text) > $count) {
-            return explode (' ', $text, $count + 1)[$count];
+            return explode(' ', $text, $count + 1)[$count];
         }
 
         return '';

@@ -38,7 +38,7 @@ abstract class Filter
     {
         $class  = new ReflectionClass(static::class);
 
-        $methods = array_map(function($method) use ($class) {
+        $methods = array_map(function ($method) use ($class) {
             if ($method->class === $class->getName()) {
                 return $method->name;
             }

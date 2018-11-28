@@ -18,5 +18,3 @@ Route::group(['namespace' => 'Api', 'middleware' => 'api'], function () {
     Route::get('events', 'EventController@index');
     Route::get('events/{event}', 'EventController@show');
 });
-
-
